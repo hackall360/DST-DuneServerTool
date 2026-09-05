@@ -464,4 +464,24 @@ Old/
 backups/
 lib-excluded/
 
+# --------------------------------------------------------------------------
+# BULK RAW DATA DUMPS
+# Trap found mid-run: CryptoAI tracked 9.7 GB of Binance OHLCV CSVs
+# (data/raw/*USDT_1m.csv, ~400-560 MB each) because plain `*.csv` is too
+# broad to ban outright — plenty of projects keep small legitimate CSVs.
+# Target the directory conventions used for re-downloadable bulk data instead.
+# --------------------------------------------------------------------------
+data/raw/
+data/cache/
+data/downloads/
+raw_data/
+market_data/
+ohlcv/
+*_1m.csv
+*_5m.csv
+*_1h.csv
+*_1d.csv
+*USDT*.csv
+*.csv.gz
+
 # ---- END machine-wide rules ----
